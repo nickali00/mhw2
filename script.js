@@ -18,7 +18,7 @@ function assignSpace()
   const new_img = document.createElement('img');
   new_img.className = "checkbox";
   new_img.src = 'http://nicolaaliuni.altervista.org/nceck.png';
-  event.currentTarget.classList.remove('cont');
+  event.currentTarget.classList.remove('sel');
   event.currentTarget.classList.add('selcol');
   event.currentTarget.children[1].remove();
   event.currentTarget.appendChild(new_img);
@@ -29,6 +29,13 @@ function assignSpace()
 
 function attivoev(){
   var boxes = document.querySelectorAll('.choice-grid .cont');
+  for (const box of boxes)
+  {
+    box.addEventListener('click', assignSpace);
+    freeBoxes.push(box);
+  }
+
+  var boxes = document.querySelectorAll('.sel');
   for (const box of boxes)
   {
     box.addEventListener('click', assignSpace);
@@ -52,6 +59,8 @@ function pulisci(i){
 
   }
 
+
+
   var boxes = document.querySelectorAll('.choice-grid .cont');
   for (const box of boxes)
   {
@@ -60,7 +69,8 @@ function pulisci(i){
       new_img.className = "checkbox";
     if(box.attributes[2].nodeValue==i)
     {
-
+      box.classList.remove('cont');
+      box.classList.add('sel');
       box.children[1].remove();
       box.appendChild(new_img);
       box.addEventListener('click', assignSpace);
@@ -116,18 +126,31 @@ var sem;
    document.getElementById("bt").disabled = true;
  }
 
+ function puliscisel()
+{
+  var boxes = document.querySelectorAll('.choice-grid .sel');
+  for (const box of boxes)
+  {
+    box.classList.remove('sel');
+    box.classList.add('cont');
+  }
+}
  function reset()
  {
+
   document.getElementById("reset").disabled = true;
-  attivoev();
+
   pulisci("one");
   pulisci("two");
   pulisci("three");
+  puliscisel();
+  attivoev();
   const resultContainer = document.querySelector('.conten');
   resultContainer.innerHTML = '';
   sel[0]=null;
   sel[1]=null;
   sel[2]=null;
+
    window.scrollTo(0, 0);
  }
 

@@ -1,13 +1,9 @@
 /* TODO: inserite il CSS necessario per completare il MHW! */
 
-:root {
-  --grid-size: 700px;
-  --margin-size: 4px;
-  --square-size: calc((var(--grid-size) / 3) - var(--margin-size));
-}
 
 img{
-  width: 80%;
+  padding: 10px 10px 0px 10px;
+  width: 90%;
   height: 80%;
 }
 
@@ -34,19 +30,18 @@ button:hover {background-color: #e0e0e0}
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  height: var(--grid-size);
-  width: var(--grid-size);
+
 }
 
 .cont {
-  height: var(--square-size);
-  width: 32%;
+  width: 32.5%;
   background-color: rgba(0,0,0,0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 20px 0px;
+  margin-bottom: 20px;
+}
+.choice-grid img.checkbox{
+  text-align: left;
+  padding-top: 5px;
+  margin-top: 0px
 }
 
 .question-name , #bt{
@@ -59,76 +54,68 @@ button:hover {background-color: #e0e0e0}
 }
 .selcol{
   background-color: #cfe3ff;
-  height: var(--square-size);
-  width: 32%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 20px 0px;
+  width: 32.5%;
+    margin-bottom: 20px;
 }
+
+.sel{
+  background-color: rgba(0,0,0,0.6);
+  width: 32.5%;
+  margin-bottom: 20px;
+}
+
 
 @media (max-width: 700px)
 {
   article {
-    margin: auto;
-    width: 95%;
-  }
-  .cont{
-    background-color: white;
-    height: var(--square-size);
-    width: 45%;
-    background-color: rgba(0,0,0,0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 20px 0px;
-  }
-  .selcol{
-    background-color: #cfe3ff;
-    height: var(--square-size);
-    width: 45%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 20px 0px;
-  }
-  :root {
-    --grid-size: 100%;
-    --margin-size: auto;
-    --square-size: calc((var(--grid-size) / 3) - var(--margin-size));
-  }
-  .question-name h1 {
-    font-size: 40px;
-  }
-  header div{
-    display: none;
-  }
+   margin: auto;
+   width: 95%;
+ }
+ .cont{
+
+   width: 45%;
+   background-color: rgba(0,0,0,0.1);
+   margin-bottom: 20px;
+ }
+ .selcol{
+   background-color: #cfe3ff;
+   width: 45%;
+   margin-bottom: 20px;
+ }
+ .sel{
+   background-color: rgba(0,0,0,0.6);
+   width: 45%;
+   margin-bottom: 20px;
+ }
+ :root {
+   --grid-size: 100%;
+   --margin-size: auto;
+   --square-size: calc((var(--grid-size) / 3) - var(--margin-size));
+ }
+ .question-name h1 {
+   font-size: 40px;
+ }
+ header div{
+   display: none;
+ }
 }
 
 @media (max-width: 500px)
 {
-  .cont{
-    background-color: white;
-    height: var(--square-size);
-    width: 32%;
-    background-color: rgba(0,0,0,0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 20px 0px;
-  }
-  .selcol{
-    background-color: #cfe3ff;
-    height: var(--square-size);
-    width: 32%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 20px 0px;
-  }
+ .cont{
+
+   width: 32%;
+   background-color: rgba(0,0,0,0.1);
+   margin-bottom: 20px;
+ }
+ .selcol{
+   background-color: #cfe3ff;
+   width: 32%;
+   margin-bottom: 20px;
+ }
+ .sel{
+   background-color: rgba(0,0,0,0.6);
+   width: 32%;
+   margin-bottom: 20px;
+ }
 }
